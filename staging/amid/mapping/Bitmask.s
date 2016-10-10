@@ -194,7 +194,7 @@ var toStr = function( o )
   var result = '';
   var o = o || {};
 
-  var result = _.toStr( self.defaultFieldsMap );
+  var result = _.toStr( self.defaultFieldsMap, o );
   return result;
 }
 
