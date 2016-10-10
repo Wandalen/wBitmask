@@ -87,9 +87,9 @@ var init = function( o )
  * @throws {exception} If no argument provided.
  * @throws {exception} If( map ) is not a Object.
  * @throws {exception} If( map ) is extended by unknown property.
-
  * @memberof wTools
  */
+
 var mapToWord = function( map )
 {
   var self = this;
@@ -112,6 +112,33 @@ var mapToWord = function( map )
 }
 
 //
+
+/**
+ * Applies bitmask( word ) on boolean map( defaultFieldsMap ).
+ * Each bit value in number corresponds to true/false key value in map.
+ *
+ * @param { number } word - source bitmask.
+ * @return { object } Returns new boolean map with values from( word ).
+ *
+ * @example
+ * var defaultFieldsArray =
+ * [
+ *   { hidden : false },
+ *   { system : true }
+ * ];
+ *
+ * var bitmask = wBitmask
+ * ({
+ *   defaultFieldsArray : defaultFieldsArray
+ * });
+ * var map = bitmask.wordToMap( parseInt( '0011', 2 ) );
+ * console.log( map ); // returns { hidden: true, system: true }
+ *
+ * @method wordToMap
+ * @throws {exception} If no argument provided.
+ * @throws {exception} If( word ) is not a Number.
+ * @memberof wTools
+ */
 
 var wordToMap = function( word )
 {
