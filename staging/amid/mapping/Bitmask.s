@@ -159,6 +159,35 @@ var wordToMap = function( word )
 
 //
 
+/**
+ * Converts map( defaultFieldsMap ) to string representation using
+ * options( o ).
+ *
+ * @param { object } o - options {@link wTools~toStrOptions}.
+ * @return { string } Returns string that represents map's data.
+ *
+ * @example
+ * var defaultFieldsArray =
+ * [
+ *   { hidden : false },
+ *   { system : true }
+ * ];
+ *
+ * var bitmask = wBitmask
+ * ({
+ *   defaultFieldsArray : defaultFieldsArray
+ * });
+ * var str = bitmask.toStr( { multiline : true } );
+ * console.log( str );
+ * // returns
+ * // {
+ * //   hidden: true,
+ * //   system: true
+ * // }
+ *
+ * @method toStr
+ * @memberof wTools
+ */
 var toStr = function( o )
 {
   var self = this;
