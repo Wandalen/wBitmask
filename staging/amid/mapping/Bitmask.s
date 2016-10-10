@@ -188,6 +188,7 @@ var wordToMap = function( word )
  * @method toStr
  * @memberof wTools
  */
+
 var toStr = function( o )
 {
   var self = this;
@@ -199,6 +200,28 @@ var toStr = function( o )
 }
 
 //
+
+/**
+ *
+ * @param { array } src - source array.
+ *
+ * @example
+ * var defaultFieldsArray =
+ * [
+ *   { hidden : false },
+ *   { system : true }
+ * ];
+ * var bitmask = wBitmask
+ * ({
+ *   defaultFieldsArray : defaultFieldsArray
+ * });
+ * console.log( bitmask.defaultFieldsArray );
+ * // returns [ { hidden: false }, { system: true } ]
+ *
+ * @private
+ * @method _defaultFieldsArraySet
+ * @memberof wTools
+ */
 
 var _defaultFieldsArraySet = function( src )
 {
