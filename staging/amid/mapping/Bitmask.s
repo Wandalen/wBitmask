@@ -60,41 +60,6 @@ var init = function( o )
 
 //
 
-var _defaultFieldsArraySet = function( src )
-{
-  var self = this;
-
-  _.assert( _.arrayIs( src ) || src === null );
-
-  var names = [];
-  var defaultFieldsMap = {};
-
-  if( src )
-  {
-
-    if( src.length > 32 )
-    throw _.err( 'Bitmask cant store more then 32 fields' );
-
-    for( var s = 0 ; s < src.length ; s++ )
-    {
-      var field = src[ s ];
-      var keys = Object.keys( field );
-      _.assert( _.objectIs( field ) );
-      _.assert( keys.length === 1 );
-      names.push( keys[ 0 ] );
-      defaultFieldsMap[ keys[ 0 ] ] = field[ keys[ 0 ] ];
-    }
-
-  }
-
-  self[ Symbol.for( 'defaultFieldsArray' ) ] = Object.freeze( src );
-  self[ Symbol.for( 'names' ) ] = Object.freeze( names );
-  self[ Symbol.for( 'defaultFieldsMap' ) ] = Object.freeze( defaultFieldsMap );
-
-}
-
-//
-
 var mapToWord = function( map )
 {
   var self = this;
@@ -148,6 +113,41 @@ var toStr = function( o )
   return result;
 }
 
+//
+
+var _defaultFieldsArraySet = function( src )
+{
+  var self = this;
+
+  _.assert( _.arrayIs( src ) || src === null );
+
+  var names = [];
+  var defaultFieldsMap = {};
+
+  if( src )
+  {
+
+    if( src.length > 32 )
+    throw _.err( 'Bitmask cant store more then 32 fields' );
+
+    for( var s = 0 ; s < src.length ; s++ )
+    {
+      var field = src[ s ];
+      var keys = Object.keys( field );
+      _.assert( _.objectIs( field ) );
+      _.assert( keys.length === 1 );
+      names.push( keys[ 0 ] );
+      defaultFieldsMap[ keys[ 0 ] ] = field[ keys[ 0 ] ];
+    }
+
+  }
+
+  self[ Symbol.for( 'defaultFieldsArray' ) ] = Object.freeze( src );
+  self[ Symbol.for( 'names' ) ] = Object.freeze( names );
+  self[ Symbol.for( 'defaultFieldsMap' ) ] = Object.freeze( defaultFieldsMap );
+
+}
+
 // --
 // relationships
 // --
@@ -176,11 +176,12 @@ var Proto =
 
   init : init,
 
-  _defaultFieldsArraySet : _defaultFieldsArraySet,
   mapToWord : mapToWord,
   wordToMap : wordToMap,
 
   toStr : toStr,
+
+  _defaultFieldsArraySet : _defaultFieldsArraySet,
 
 
   // relationships
