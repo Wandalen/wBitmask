@@ -24,4 +24,5 @@ var bitmask = wBitmask
 });
 
 console.log( 'bitmask' )
+
 console.log( bitmask.toStr() );

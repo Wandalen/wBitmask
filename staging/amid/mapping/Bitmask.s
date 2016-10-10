@@ -145,6 +145,7 @@ var toStr = function( o )
 {
   var self = this;
   var result = '';
+  var o = o || {};
 
   var fields =
   {
@@ -152,7 +153,8 @@ var toStr = function( o )
     defaultValue : null,
   }
 
-  self.toStr_gen({ fields : fields })( o );
+  var result = self.toStr_gen({ fields : fields }).call( self,o );
+  return result;
 }
 
 // --
