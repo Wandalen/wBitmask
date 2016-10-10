@@ -59,22 +59,22 @@ var mapToWord = function( test )
 
   test.description = 'simple2';
   var got = bitmask.mapToWord( { link : 0, system : 1 } );
-  var expected = parseInt('00110', 2)
+  var expected = parseInt('00110', 2);
   test.identical( got,expected );
 
   test.description = 'value is -1';
   var got = bitmask.mapToWord( { hidden : -1, system : 1 } );
-  var expected = parseInt('10111', 2)
+  var expected = parseInt('10111', 2);
   test.identical( got,expected );
 
   test.description = 'map value is bigger then 1 or 0';
   var got = bitmask.mapToWord( { hidden : -1, system : 100 } );
-  var expected = parseInt('10111', 2)
+  var expected = parseInt('10111', 2);
   test.identical( got,expected );
 
   test.description = 'map value is str';
   var got = bitmask.mapToWord( { hidden : 'a', system : 0 } );
-  var expected = parseInt('10101', 2)
+  var expected = parseInt('10101', 2);
   test.identical( got,expected );
 
   if( Config.debug )
@@ -97,21 +97,75 @@ var mapToWord = function( test )
        bitmask.mapToWord( { hidden : -1, system : 1, original : 1 } );
     });
   }
-
 }
 
 //
 
 var wordToMap = function( test )
 {
+  test.description = 'simple1';
+  var got = bitmask.wordToMap( parseInt('11001', 2) );
+  var expected =
+  {
+     hidden : true,
+     system : false,
+     terminal : false,
+     directory : true,
+     link : true,
+  }
+  test.identical( got,expected );
 
+  test.description = 'simple2';
+  var got = bitmask.wordToMap( parseInt('00110', 2) );
+  var expected =
+  {
+     hidden : false,
+     system : true,
+     terminal : true,
+     directory : false,
+     link : false,
+  }
+  test.identical( got,expected );
+
+  test.description = 'value is 0';
+  var got = bitmask.wordToMap( 0 );
+  var expected =
+  {
+     hidden : false,
+     system : false,
+     terminal : false,
+     directory : false,
+     link : false,
+  }
+  test.identical( got,expected );
+  test.description = 'value is 1';
+  var got = bitmask.wordToMap( 1 );
+  var expected =
+  {
+     hidden : true,
+     system : false,
+     terminal : false,
+     directory : false,
+     link : false,
+  }
+  test.identical( got,expected );
+
+  if( Config.debug )
+  {
+    test.description = 'no argument';
+    test.shouldThrowError( function()
+    {
+       bitmask.wordToMap(  );
+    });
+
+    test.description = 'word is not a number';
+    test.shouldThrowError( function()
+    {
+       bitmask.wordToMap( "123" );
+    });
+  }
 }
 
-
-var toStr = function( test  )
-{
-
-}
 
 var _defaultFieldsArraySet = function( test )
 {
@@ -126,6 +180,7 @@ var Proto =
   tests:
   {
     mapToWord: mapToWord,
+    wordToMap: wordToMap,
 
 
 
