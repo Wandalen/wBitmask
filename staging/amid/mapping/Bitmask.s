@@ -44,22 +44,50 @@ var Self = function wBitmask( o )
 
 var init = function( o )
 {
-  var self = this;
+  var self = this; /*changes context to current object*/
 
-  _.protoComplementInstance( self );
+  _.protoComplementInstance( self );/*extends object by fields from relationships*/
 
-  Object.preventExtensions( self );
+  Object.preventExtensions( self );/*disables object extending*/
 
-  if( o )
+  if( o )/*clones fields from options object*/
   self.copy( o );
 
-  if( !self.defaultFieldsArray )
+  if( !self.defaultFieldsArray ) /*checks if defaultFieldsArray is provided by( o )*/
   throw _.err( 'Bitmask','needs defaultFieldsArray' )
 
 }
 
 //
 
+/**
+ * Converts boolean map( map ) into  32-bit number represetation.
+ * Before converions function supplements source( map ) by default fields
+ * from( defaultFieldsMap ) that map doesn`t contain.
+ *
+ * @param { object } map - source map.
+ *
+ * @example
+ * var defaultFieldsArray =
+ * [
+ *   { hidden : false },
+ *   { system : true }
+ * ];
+ *
+ * var bitmask = wBitmask
+ * ({
+ *   defaultFieldsArray : defaultFieldsArray
+ * });
+ * var word = bitmask.mapToWord( { hidden : true } );
+ * console.log( word ); // returns 3( 0011 in Dec )
+ *
+ * @method mapToWord
+ * @throws {exception} If no argument provided.
+ * @throws {exception} If( map ) is not a Object.
+ * @throws {exception} If( map ) is extended by unknown property.
+
+ * @memberof wTools
+ */
 var mapToWord = function( map )
 {
   var self = this;
@@ -194,6 +222,8 @@ var Proto =
 };
 
 // define
+/*Makes prototype for constructor Self. Extends prototype with field from Proto
+and repairs relationships : Composes, Aggregates, Associates, Restricts.*/
 
 _.protoMake
 ({
@@ -202,9 +232,12 @@ _.protoMake
   extend : Proto,
 });
 
+/*Mixins wCopyable into prototype Self*/
+
 wCopyable.mixin( Self );
 
 // accessor
+/*Defines set/get functions for provided object fields names*/
 
 _.accessor( Self.prototype,
 {
@@ -214,6 +247,7 @@ _.accessor( Self.prototype,
 });
 
 // readonly
+/*Makes fields readonly by defining only getter function*/
 
 _.accessorReadOnly( Self.prototype,
 {
@@ -223,6 +257,7 @@ _.accessorReadOnly( Self.prototype,
 
 });
 
+/*Defines class on wTools and global namespaces*/
 wTools.Bitmask = _global_.wBitmask = Self;
 
 })();
