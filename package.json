@@ -21,7 +21,8 @@
     "url": "https://github.com/Wandalen/wBitmask/issues"
   },
   "dependencies": {
-    "wTools": ""
+    "wTools": "",
+    "wCopyable": ""
   },
   "devDependencies": {
     "wTesting": ""
