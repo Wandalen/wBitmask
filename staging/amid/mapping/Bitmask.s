@@ -27,6 +27,8 @@ if( typeof module !== 'undefined' )
 
 }
 
+//
+
 var _ = wTools;
 var Parent = null;
 var Self = function wBitmask( o )
@@ -44,8 +46,6 @@ var init = function( o )
 {
   var self = this;
 
-  //debugger;
-
   _.protoComplementInstance( self );
 
   Object.preventExtensions( self );
@@ -53,22 +53,21 @@ var init = function( o )
   if( o )
   self.copy( o );
 
-  if( !self.defaultFields )
-  throw _.err( 'Bitmask','needs defaultFields' )
+  if( !self.defaultFieldsArray )
+  throw _.err( 'Bitmask','needs defaultFieldsArray' )
 
 }
 
 //
 
-var _defaultFieldsSet = function( src )
+var _defaultFieldsArraySet = function( src )
 {
   var self = this;
 
-  //debugger;
   _.assert( _.arrayIs( src ) || src === null );
 
   var names = [];
-  var defaultValue = {};
+  var defaultFieldsMap = {};
 
   if( src )
   {
@@ -83,16 +82,14 @@ var _defaultFieldsSet = function( src )
       _.assert( _.objectIs( field ) );
       _.assert( keys.length === 1 );
       names.push( keys[ 0 ] );
-      defaultValue[ keys[ 0 ] ] = field[ keys[ 0 ] ];
+      defaultFieldsMap[ keys[ 0 ] ] = field[ keys[ 0 ] ];
     }
 
   }
 
-  self[ Symbol.for( 'defaultFields' ) ] = Object.freeze( src );
+  self[ Symbol.for( 'defaultFieldsArray' ) ] = Object.freeze( src );
   self[ Symbol.for( 'names' ) ] = Object.freeze( names );
-  self[ Symbol.for( 'defaultValue' ) ] = Object.freeze( defaultValue );
-
-  //debugger;
+  self[ Symbol.for( 'defaultFieldsMap' ) ] = Object.freeze( defaultFieldsMap );
 
 }
 
@@ -103,12 +100,12 @@ var mapToWord = function( map )
   var self = this;
   var result = 0;
   var names = self.names;
-  var defaultValue = self.defaultValue;
+  var defaultFieldsMap = self.defaultFieldsMap;
 
   _.assert( arguments.length === 1 );
   _.assert( _.objectIs( map ) );
-  _.mapSupplement( map,defaultValue )
-  _.assertMapHasOnly( map,defaultValue );
+  _.mapSupplement( map,defaultFieldsMap )
+  _.assertMapHasOnly( map,defaultFieldsMap );
 
   for( var f = 0 ; f < names.length ; f++ )
   {
@@ -147,13 +144,7 @@ var toStr = function( o )
   var result = '';
   var o = o || {};
 
-  var fields =
-  {
-    names : null,
-    defaultValue : null,
-  }
-
-  var result = self.toStr_gen({ fields : fields }).call( self,o );
+  var result = _.toStr( self.defaultFieldsMap );
   return result;
 }
 
@@ -163,7 +154,7 @@ var toStr = function( o )
 
 var Composes =
 {
-  defaultFields : null,
+  defaultFieldsArray : null,
 }
 
 var Associates =
@@ -173,7 +164,7 @@ var Associates =
 var Restricts =
 {
   // names : null,
-  // defaultValue : null,
+  // defaultFieldsMap : null,
 }
 
 // --
@@ -185,9 +176,12 @@ var Proto =
 
   init : init,
 
-  _defaultFieldsSet : _defaultFieldsSet,
+  _defaultFieldsArraySet : _defaultFieldsArraySet,
   mapToWord : mapToWord,
   wordToMap : wordToMap,
+
+  toStr : toStr,
+
 
   // relationships
 
@@ -214,7 +208,7 @@ wCopyable.mixin( Self );
 _.accessor( Self.prototype,
 {
 
-  defaultFields : 'defaultFields',
+  defaultFieldsArray : 'defaultFieldsArray',
 
 });
 
@@ -224,7 +218,7 @@ _.accessorReadOnly( Self.prototype,
 {
 
   names : 'names',
-  defaultValue : 'defaultValue',
+  defaultFieldsMap : 'defaultFieldsMap',
 
 });
 
