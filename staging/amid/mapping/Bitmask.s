@@ -113,7 +113,7 @@ var mapToWord = function( map )
 //
 
 /**
- * Applies bitmask( word ) on boolean map( defaultFieldsMap ).
+ * Applies 32-bit number bitmask( word ) on boolean map( defaultFieldsMap ).
  * Each bit value in number corresponds to true/false key value in map.
  *
  * @param { number } word - source bitmask.
