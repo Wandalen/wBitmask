@@ -62,10 +62,12 @@ var init = function( o )
 
 /**
  * Converts boolean map( map ) into  32-bit number represetation.
+ * Each true/false key value in map corresponds to 1/0 bit value in number.
  * Before converions function supplements source( map ) by default fields
  * from( defaultFieldsMap ) that map doesn`t contain.
  *
  * @param { object } map - source map.
+ * @return { number } Returns boolean map values represented as number.
  *
  * @example
  * var defaultFieldsArray =
