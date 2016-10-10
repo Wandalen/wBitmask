@@ -28,7 +28,7 @@ var defaultFieldsArray =
 
 ];
 
-/*create new instance of wBitmask by providing to the constructor( defaultFieldsArray ) as property of options object */
+/*create new instance of wBitmask by passing options object with array( defaultFieldsArray ) to the constructor*/
 var bitmask = wBitmask
 ({
   defaultFieldsArray : defaultFieldsArray
