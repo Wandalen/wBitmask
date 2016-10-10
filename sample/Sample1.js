@@ -37,6 +37,6 @@ var word = bitmask.mapToWord( originalMap );
 
 console.log( 'word : ' + word );
 
-var map = bitmask.wordToMap( word );
+var restoredMap = bitmask.wordToMap( word );
 
-console.log( 'map :\n' + _.toStr( map ) );
+console.log( 'restoredMap :\n' + _.toStr( restoredMap ) );
