@@ -139,6 +139,22 @@ var wordToMap = function( word )
   return result;
 }
 
+//
+
+var toStr = function( o )
+{
+  var self = this;
+  var result = '';
+
+  var fields =
+  {
+    names : null,
+    defaultValue : null,
+  }
+
+  self.toStr_gen({ fields : fields })( o );
+}
+
 // --
 // relationships
 // --
