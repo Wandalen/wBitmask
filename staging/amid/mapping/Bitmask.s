@@ -61,10 +61,9 @@ var init = function( o )
 //
 
 /**
- * Converts boolean map( map ) into  32-bit number represetation.
+ * Converts boolean map( map ) into  32-bit number bitmask.
  * Each true/false key value in map corresponds to 1/0 bit value in number.
- * Before converions function supplements source( map ) by default fields
- * from( defaultFieldsMap ) that map doesn`t contain.
+ * Before converions function supplements source( map ) by unique fields from( defaultFieldsMap ).
  *
  * @param { object } map - source map.
  * @return { number } Returns boolean map values represented as number.
@@ -114,7 +113,7 @@ var mapToWord = function( map )
 //
 
 /**
- * Applies bitmask( word ) on boolean map( defaultFieldsMap ).
+ * Applies 32-bit number bitmask( word ) on boolean map( defaultFieldsMap ).
  * Each bit value in number corresponds to true/false key value in map.
  *
  * @param { number } word - source bitmask.
@@ -160,17 +159,69 @@ var wordToMap = function( word )
 
 //
 
+/**
+ * Converts map( defaultFieldsMap ) to string representation using
+ * options( o ).
+ *
+ * @param { object } o - options {@link wTools~toStrOptions}.
+ * @return { string } Returns string that represents map's data.
+ *
+ * @example
+ * var defaultFieldsArray =
+ * [
+ *   { hidden : false },
+ *   { system : true }
+ * ];
+ *
+ * var bitmask = wBitmask
+ * ({
+ *   defaultFieldsArray : defaultFieldsArray
+ * });
+ * var str = bitmask.toStr( { multiline : true } );
+ * console.log( str );
+ * // returns
+ * // {
+ * //   hidden: true,
+ * //   system: true
+ * // }
+ *
+ * @method toStr
+ * @memberof wTools
+ */
+
 var toStr = function( o )
 {
   var self = this;
   var result = '';
   var o = o || {};
 
-  var result = _.toStr( self.defaultFieldsMap );
+  var result = _.toStr( self.defaultFieldsMap, o );
   return result;
 }
 
 //
+
+/**
+ *
+ * @param { array } src - source array.
+ *
+ * @example
+ * var defaultFieldsArray =
+ * [
+ *   { hidden : false },
+ *   { system : true }
+ * ];
+ * var bitmask = wBitmask
+ * ({
+ *   defaultFieldsArray : defaultFieldsArray
+ * });
+ * console.log( bitmask.defaultFieldsArray );
+ * // returns [ { hidden: false }, { system: true } ]
+ *
+ * @private
+ * @method _defaultFieldsArraySet
+ * @memberof wTools
+ */
 
 var _defaultFieldsArraySet = function( src )
 {
