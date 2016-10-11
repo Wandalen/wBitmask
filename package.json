@@ -42,6 +42,9 @@
     "wTesting": ""
   },
   "keywords": [
-    "wTools"
+    "wTools",
+    "bitmask",
+    "bitwise",
+    "logical"
   ]
 }

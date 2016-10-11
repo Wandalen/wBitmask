@@ -16,6 +16,8 @@ npm install wBitmask
 ## Usage
 ```javascript
 
+var _ = wTools;
+
 /*define array of possible names and bit values, that can vary*/
 var defaultFieldsArray =
 [
@@ -78,6 +80,4 @@ console.log( 'restoredMap :\n' + _.toStr( restoredMap ) );
   link : true
 }*/
 ```
-
-
 
