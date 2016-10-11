@@ -303,7 +303,7 @@ var Proto =
 
 // define
 
-/*Makes prototype for constructor Self. Extends prototype with field from Proto
+/*Makes prototype for constructor Self. Extends prototype with fields from Proto
 and repairs relationships : Composes, Aggregates, Associates, Restricts.*/
 
 _.protoMake
