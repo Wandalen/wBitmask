@@ -16,8 +16,8 @@
   "license": "MIT",
   "main": "staging/amid/mapping/Bitmask.s",
   "files": [
-    "./staging/amid",
-    "./production"
+    "staging/amid",
+    "production"
   ],
   "directories": {
     "doc": "doc",
