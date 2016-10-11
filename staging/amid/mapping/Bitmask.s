@@ -204,7 +204,7 @@ var toStr = function( o )
 //
 
 /**
- *
+ * Setter for ( defaultFieldsArray ) field.
  * @param { array } src - source array.
  *
  * @example
@@ -222,6 +222,7 @@ var toStr = function( o )
  *
  * @private
  * @method _defaultFieldsArraySet
+ * @throws {exception} If( src ) is not a Array or null.
  * @memberof wTools
  */
 
