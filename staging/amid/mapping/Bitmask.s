@@ -2,6 +2,8 @@
 
 'use strict';
 
+// dependencies
+
 if( typeof module !== 'undefined' )
 {
 
@@ -27,7 +29,7 @@ if( typeof module !== 'undefined' )
 
 }
 
-//
+// constructor
 
 var _ = wTools;
 var Parent = null;
@@ -271,8 +273,6 @@ var Associates =
 
 var Restricts =
 {
-  // names : null,
-  // defaultFieldsMap : null,
 }
 
 // --
@@ -302,6 +302,7 @@ var Proto =
 };
 
 // define
+
 /*Makes prototype for constructor Self. Extends prototype with field from Proto
 and repairs relationships : Composes, Aggregates, Associates, Restricts.*/
 
@@ -317,6 +318,7 @@ _.protoMake
 wCopyable.mixin( Self );
 
 // accessor
+
 /*Defines set/get functions for provided object fields names*/
 
 _.accessor( Self.prototype,
@@ -327,6 +329,7 @@ _.accessor( Self.prototype,
 });
 
 // readonly
+
 /*Makes fields readonly by defining only getter function*/
 
 _.accessorReadOnly( Self.prototype,

@@ -1,5 +1,5 @@
 # wBitmask
-Module that provides an easy way to manage boolean maps values with bitmasking technique in JavaScript.
+Module in JavaScript that provides an easy way to manage boolean maps.
 
 ## Bitmask
 Bitmask is a sequence of bits that we can use to store different data in a single value.
