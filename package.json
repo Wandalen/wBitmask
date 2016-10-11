@@ -1,12 +1,17 @@
 {
   "name": "wBitmask",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "description": "",
   "author": "Kostiantyn Wandalen <wtory.net@domainsbyproxy.com>",
-  "contributors" :
-  [
-    { "name":"Kostiantyn Wandalen","email" : "wtory.net@domainsbyproxy.com>" },
-    { "name" : "Volodymyr M.","email" : "volodymyr.migdal@gmail.com" }
+  "contributors": [
+    {
+      "name": "Kostiantyn Wandalen",
+      "email": "wtory.net@domainsbyproxy.com>"
+    },
+    {
+      "name": "Volodymyr M.",
+      "email": "volodymyr.migdal@gmail.com"
+    }
   ],
   "license": "MIT",
   "main": "./staging/amid/mapping/Bitmask.s",
@@ -15,8 +20,8 @@
     "./production"
   ],
   "directories": {
-    "doc" : "./doc",
-    "main" : "./staging/amid/mapping/Bitmask.s"
+    "doc": "./doc",
+    "main": "./staging/amid/mapping/Bitmask.s"
   },
   "scripts": {
     "test": "node ./staging/amid/z.test/Test.s",
