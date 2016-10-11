@@ -14,14 +14,14 @@
     }
   ],
   "license": "MIT",
-  "main": "./staging/amid/mapping/Bitmask.s",
+  "main": "staging/amid/mapping/Bitmask.s",
   "files": [
     "./staging/amid",
     "./production"
   ],
   "directories": {
-    "doc": "./doc",
-    "main": "./staging/amid/mapping/Bitmask.s"
+    "doc": "doc",
+    "main": "staging/amid/mapping/Bitmask.s"
   },
   "scripts": {
     "test": "node ./staging/amid/z.test/Test.s",
