@@ -223,6 +223,7 @@ var toStr = function( o )
  * @private
  * @method _defaultFieldsArraySet
  * @throws {exception} If( src ) is not a Array or null.
+ * @throws {exception} If( src.length ) is bigger then 32.
  * @memberof wTools
  */
 
