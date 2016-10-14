@@ -24,7 +24,7 @@
     "main": "staging/amid/mapping/Bitmask.s"
   },
   "scripts": {
-    "test": "node ./staging/amid/z.test/Test.s",
+    "test": "node ./staging/amid/z.test/Bitmask.test.s",
     "make_doc": "./doc.sh"
   },
   "repository": {
