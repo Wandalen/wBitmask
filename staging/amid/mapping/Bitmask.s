@@ -17,15 +17,9 @@ if( typeof module !== 'undefined' )
     require( 'wTools' );
   }
 
-  if( typeof wCopyable === 'undefined' )
-  try
-  {
-    require( '../../mixin/Copyable.s' );
-  }
-  catch( err )
-  {
-    require( 'wCopyable' );
-  }
+  var _ = wTools;
+
+  _.include( 'wCopyable' );
 
 }
 
@@ -47,7 +41,7 @@ var Self = function wBitmask( o )
 // inter
 // --
 
-var init = function( o )
+function init( o )
 {
   var self = this; /*changes context to current object*/
 
@@ -94,7 +88,7 @@ var init = function( o )
  * @memberof wTools
  */
 
-var mapToWord = function( map )
+function mapToWord( map )
 {
   var self = this;
   var result = 0;
@@ -144,7 +138,7 @@ var mapToWord = function( map )
  * @memberof wTools
  */
 
-var wordToMap = function( word )
+function wordToMap( word )
 {
   var self = this;
   var result = {};
@@ -194,7 +188,7 @@ var wordToMap = function( word )
  * @memberof wTools
  */
 
-var toStr = function( o )
+function toStr( o )
 {
   var self = this;
   var result = '';
@@ -228,7 +222,7 @@ var toStr = function( o )
  * @memberof wTools
  */
 
-var _defaultFieldsArraySet = function( src )
+function _defaultFieldsArraySet( src )
 {
   var self = this;
 
