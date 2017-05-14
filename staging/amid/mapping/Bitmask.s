@@ -305,7 +305,7 @@ and repairs relationships : Composes, Aggregates, Associates, Restricts.*/
 
 _.protoMake
 ({
-  constructor : Self,
+  cls : Self,
   parent : Parent,
   extend : Proto,
 });

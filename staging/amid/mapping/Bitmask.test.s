@@ -15,17 +15,20 @@ node ./staging/z.test/Sample.test.s
 if( typeof module !== 'undefined' )
 {
 
-  require( 'wTools' );
-  require( '../mapping/Bitmask.s' );
-
   try
   {
-    require( '../../amid/diagnostic/Testing.debug.s' );
+    require( '../../abase/wTools.s' );
   }
   catch( err )
   {
-    require( 'wTesting' );
+    require( 'wTools' );
   }
+
+  require( '../mapping/Bitmask.s' );
+
+   var _ = wTools;
+
+   _.include( 'wTesting' );
 
 }
 
