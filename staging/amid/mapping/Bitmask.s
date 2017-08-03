@@ -37,23 +37,26 @@ var Self = function wBitmask( o )
   return Self.prototype.init.apply( this,arguments );
 }
 
+Self.nameShort = 'Bitmask';
+
 // --
 // inter
 // --
 
 function init( o )
 {
-  var self = this; /*changes context to current object*/
+  var self = this; /* changes context to current object */
 
-  _.instanceInit( self );/*extends object by fields from relationships*/
+  _.assert( arguments.length === 0 || arguments.length === 1 );
 
-  Object.preventExtensions( self );/*disables object extending*/
+  _.instanceInit( self );/* extends object by fields from relationships */
 
-  if( o )/*clones fields from options object*/
+  Object.preventExtensions( self );/* disables object extending */
+
+  if( o ) /* copy fields from options object */
   self.copy( o );
 
-  if( !self.defaultFieldsArray ) /*checks if defaultFieldsArray is provided by( o )*/
-  throw _.err( 'Bitmask','needs defaultFieldsArray' )
+  _.assert( self.defaultFieldsArray, 'Bitmask','needs defaultFieldsArray' ); /* checks if defaultFieldsArray is provided by( o ) */
 
 }
 
@@ -301,9 +304,9 @@ var Proto =
 // define
 
 /*Makes prototype for constructor Self. Extends prototype with field from Proto
-and repairs relationships : Composes, Aggregates, Associates, Restricts.*/
+and adjust relationships : Composes, Aggregates, Associates, Restricts.*/
 
-_.protoMake
+_.prototypeMake
 ({
   cls : Self,
   parent : Parent,
@@ -338,6 +341,6 @@ _.accessorReadOnly( Self.prototype,
 });
 
 /*Defines class on wTools and global namespaces*/
-wTools.Bitmask = _global_.wBitmask = Self;
+wTools[ Self.nameShort ] = _global_[ Self.name ] = Self;
 
 })();
