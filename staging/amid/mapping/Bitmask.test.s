@@ -202,6 +202,6 @@ var Proto =
 _.mapExtend( Self,Proto );
 
 if( typeof module !== 'undefined' && !module.parent )
-_.Testing.test( Self );
+_.Tester.test( Self );
 
 } )( );
