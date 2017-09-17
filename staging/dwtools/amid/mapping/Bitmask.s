@@ -10,7 +10,7 @@ if( typeof module !== 'undefined' )
   if( typeof wBase === 'undefined' )
   try
   {
-    require( '../wTools.s' );
+    require( '../../Base.s' );
   }
   catch( err )
   {
@@ -306,7 +306,7 @@ var Proto =
 /*Makes prototype for constructor Self. Extends prototype with field from Proto
 and adjust relationships : Composes, Aggregates, Associates, Restricts.*/
 
-_.prototypeMake
+_.classMake
 ({
   cls : Self,
   parent : Parent,

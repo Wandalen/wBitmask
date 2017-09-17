@@ -1,4 +1,4 @@
-# wBitmask
+# wBitmask [![Build Status](https://travis-ci.org/Wandalen/wBitmask.svg?branch=master)](https://travis-ci.org/Wandalen/wBitmask)
 Module in JavaScript providing an easy way to manage boolean maps.
 
 ## Bitmask
@@ -80,8 +80,3 @@ console.log( 'restoredMap :\n' + _.toStr( restoredMap ) );
   link : true
 }*/
 ```
-
-
-
-
-
