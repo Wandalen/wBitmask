@@ -17,13 +17,9 @@
   "license": "MIT",
   "main": "staging/dwtools/amid/mapping/Bitmask.s",
   "files": [
-    "staging/dwtools/amid",
+    "staging/dwtools/amid/mapping/Bitmask.s",
     "production"
   ],
-  "directories": {
-    "doc": "doc",
-    "main": "staging/dwtools/amid/mapping/Bitmask.s"
-  },
   "scripts": {
     "test": "wtest staging",
     "make_doc": "./doc.sh"

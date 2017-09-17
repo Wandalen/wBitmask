@@ -2,16 +2,6 @@
 
 'use strict';
 
-/*
-
-to run this test
-from the project directory run
-
-npm install
-node ./staging/z.test/Sample.test.s
-
-*/
-
 if( typeof module !== 'undefined' )
 {
 
@@ -33,7 +23,6 @@ if( typeof module !== 'undefined' )
 }
 
 var _ = wTools;
-var Self = {};
 
 //
 
@@ -55,7 +44,7 @@ var bitmask = wBitmask
 
 //
 
-var mapToWord = function( test )
+function mapToWord( test )
 {
 
   //default 10100
@@ -109,7 +98,7 @@ var mapToWord = function( test )
 
 //
 
-var wordToMap = function( test )
+function wordToMap( test )
 {
 
   test.description = 'simple1';
@@ -175,33 +164,26 @@ var wordToMap = function( test )
   }
 }
 
+//
 
-var _defaultFieldsArraySet = function( test )
-{
-
-}
-
-var Proto =
+var Self =
 {
 
   name : 'Bitmask test',
+  // verbose : 1,
 
   tests :
   {
     mapToWord : mapToWord,
     wordToMap : wordToMap,
-
-
-
   },
-
-  verbose : 1,
 
 }
 
-_.mapExtend( Self,Proto );
+//
 
+Self = wTestSuite( Self );
 if( typeof module !== 'undefined' && !module.parent )
-_.Tester.test( Self );
+_.Tester.test( Self.name );
 
-} )( );
+})();
