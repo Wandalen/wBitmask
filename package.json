@@ -1,7 +1,8 @@
 {
   "name": "wBitmask",
-  "version": "0.3.16",
-  "description": "",
+  "version": "0.4.9",
+  "engine": "node >= 6.0.0",
+  "description": "Module in JavaScript providing an easy way to manage boolean maps",
   "author": "Kostiantyn Wandalen <wtory.net@domainsbyproxy.com>",
   "contributors": [
     {
@@ -14,17 +15,13 @@
     }
   ],
   "license": "MIT",
-  "main": "staging/amid/mapping/Bitmask.s",
+  "main": "staging/dwtools/amid/mapping/Bitmask.s",
   "files": [
-    "staging/amid",
+    "staging/dwtools/amid/mapping/Bitmask.s",
     "production"
   ],
-  "directories": {
-    "doc": "doc",
-    "main": "staging/amid/mapping/Bitmask.s"
-  },
   "scripts": {
-    "test": "node ./staging/amid/z.test/Test.s",
+    "test": "wtest staging",
     "make_doc": "./doc.sh"
   },
   "repository": {
@@ -39,7 +36,8 @@
     "wCopyable": ""
   },
   "devDependencies": {
-    "wTesting": ""
+    "wTesting": "",
+    "wBitmask": "."
   },
   "keywords": [
     "wTools",

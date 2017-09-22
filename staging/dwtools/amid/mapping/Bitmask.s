@@ -10,22 +10,16 @@ if( typeof module !== 'undefined' )
   if( typeof wBase === 'undefined' )
   try
   {
-    require( '../wTools.s' );
+    require( '../../Base.s' );
   }
   catch( err )
   {
     require( 'wTools' );
   }
 
-  if( typeof wCopyable === 'undefined' )
-  try
-  {
-    require( '../../mixin/Copyable.s' );
-  }
-  catch( err )
-  {
-    require( 'wCopyable' );
-  }
+  var _ = wTools;
+
+  _.include( 'wCopyable' );
 
 }
 
@@ -36,27 +30,33 @@ var Parent = null;
 var Self = function wBitmask( o )
 {
   if( !( this instanceof Self ) )
+  if( o instanceof Self )
+  return o;
+  else
   return new( _.routineJoin( Self, Self, arguments ) );
   return Self.prototype.init.apply( this,arguments );
 }
+
+Self.nameShort = 'Bitmask';
 
 // --
 // inter
 // --
 
-var init = function( o )
+function init( o )
 {
-  var self = this; /*changes context to current object*/
+  var self = this; /* changes context to current object */
 
-  _.protoComplementInstance( self );/*extends object by fields from relationships*/
+  _.assert( arguments.length === 0 || arguments.length === 1 );
 
-  Object.preventExtensions( self );/*disables object extending*/
+  _.instanceInit( self );/* extends object by fields from relationships */
 
-  if( o )/*clones fields from options object*/
+  Object.preventExtensions( self );/* disables object extending */
+
+  if( o ) /* copy fields from options object */
   self.copy( o );
 
-  if( !self.defaultFieldsArray ) /*checks if defaultFieldsArray is provided by( o )*/
-  throw _.err( 'Bitmask','needs defaultFieldsArray' )
+  _.assert( self.defaultFieldsArray, 'Bitmask','needs defaultFieldsArray' ); /* checks if defaultFieldsArray is provided by( o ) */
 
 }
 
@@ -91,7 +91,7 @@ var init = function( o )
  * @memberof wTools
  */
 
-var mapToWord = function( map )
+function mapToWord( map )
 {
   var self = this;
   var result = 0;
@@ -141,7 +141,7 @@ var mapToWord = function( map )
  * @memberof wTools
  */
 
-var wordToMap = function( word )
+function wordToMap( word )
 {
   var self = this;
   var result = {};
@@ -191,7 +191,7 @@ var wordToMap = function( word )
  * @memberof wTools
  */
 
-var toStr = function( o )
+function toStr( o )
 {
   var self = this;
   var result = '';
@@ -227,7 +227,7 @@ var toStr = function( o )
  * @memberof wTools
  */
 
-var _defaultFieldsArraySet = function( src )
+function _defaultFieldsArraySet( src )
 {
   var self = this;
 
@@ -308,9 +308,9 @@ var Proto =
 /*Makes prototype for constructor Self. Extends prototype with fields from Proto
 and repairs relationships : Composes, Aggregates, Associates, Restricts.*/
 
-_.protoMake
+_.classMake
 ({
-  constructor : Self,
+  cls : Self,
   parent : Parent,
   extend : Proto,
 });
@@ -343,6 +343,6 @@ _.accessorReadOnly( Self.prototype,
 });
 
 /*Defines class on wTools and global namespaces*/
-wTools.Bitmask = _global_.wBitmask = Self;
+wTools[ Self.nameShort ] = _global_[ Self.name ] = Self;
 
 })();

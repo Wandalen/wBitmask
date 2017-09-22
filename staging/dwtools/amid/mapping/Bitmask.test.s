@@ -2,31 +2,27 @@
 
 'use strict';
 
-/*
-
-to run this test
-from the project directory run
-
-npm install
-node ./staging/z.test/Sample.test.s
-
-*/
-
 if( typeof module !== 'undefined' )
 {
 
-  require( 'wTools' );
+  try
+  {
+    require( '../../Base.s' );
+  }
+  catch( err )
+  {
+    require( 'wTools' );
+  }
+
   require( '../mapping/Bitmask.s' );
 
-  if( require( 'fs' ).existsSync( __dirname + '/../../amid/diagnostic/Testing.debug.s' ) )
-  require( '../../amid/diagnostic/Testing.debug.s' );
-  else
-  require( 'wTesting' );
+   var _ = wTools;
+
+   _.include( 'wTesting' );
 
 }
 
 var _ = wTools;
-var Self = {};
 
 //
 
@@ -48,7 +44,7 @@ var bitmask = wBitmask
 
 //
 
-var mapToWord = function( test )
+function mapToWord( test )
 {
 
   //default 10100
@@ -102,7 +98,7 @@ var mapToWord = function( test )
 
 //
 
-var wordToMap = function( test )
+function wordToMap( test )
 {
 
   test.description = 'simple1';
@@ -168,6 +164,7 @@ var wordToMap = function( test )
   }
 }
 
+//
 
 var _defaultFieldsArraySet = function( test )
 {
@@ -222,10 +219,12 @@ var _defaultFieldsArraySet = function( test )
   }
 }
 
-var Proto =
+var Self =
 {
 
   name : 'Bitmask test',
+  // verbose : 1,
+  silencing : 1,
 
   tests :
   {
@@ -233,17 +232,14 @@ var Proto =
     wordToMap : wordToMap,
     _defaultFieldsArraySet : _defaultFieldsArraySet
 
-
-
   },
-
-  verbose : 1,
 
 }
 
-_.mapExtend( Self,Proto );
+//
 
+Self = wTestSuite( Self );
 if( typeof module !== 'undefined' && !module.parent )
-_.testing.test( Self );
+_.Tester.test( Self.name );
 
-} )( );
+})();

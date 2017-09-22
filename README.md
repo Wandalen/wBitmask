@@ -1,5 +1,5 @@
-# wBitmask
-Module in JavaScript that provides an easy way to manage boolean maps.
+# wBitmask [![Build Status](https://travis-ci.org/Wandalen/wBitmask.svg?branch=master)](https://travis-ci.org/Wandalen/wBitmask)
+Module in JavaScript providing an easy way to manage boolean maps.
 
 ## Bitmask
 Bitmask is a sequence of bits that we can use to store different data in a single value.
@@ -80,4 +80,7 @@ console.log( 'restoredMap :\n' + _.toStr( restoredMap ) );
   link : true
 }*/
 ```
+
+
+
 
