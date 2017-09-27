@@ -166,16 +166,72 @@ function wordToMap( test )
 
 //
 
+var _defaultFieldsArraySet = function( test )
+{
+  bitmask = wBitmask
+  ( {
+    defaultFieldsArray : defaultFieldsArray
+  } );
+
+  test.description = 'defaultFieldsArray check';
+  var got = bitmask.defaultFieldsArray;
+  var expected =
+  [
+    { hidden : false },
+    { system : false },
+    { terminal : true },
+    { directory : false },
+    { link : true },
+  ];
+  test.identical( got,expected );
+
+  test.description = 'names check';
+  var got = bitmask.names;
+  var expected =
+  [
+    'hidden',
+    'system',
+    'terminal',
+    'directory',
+    'link'
+  ]
+  test.identical( got,expected );
+
+  test.description = 'defaultFieldsMap check';
+  var got = bitmask.defaultFieldsMap;
+  var expected =
+  {
+    hidden: false,
+    system: false,
+    terminal: true,
+    directory: false,
+    link: true
+  }
+  test.identical( got,expected );
+
+  if( Config.debug )
+  {
+    test.description = 'set defaultFieldsArray with string ';
+    test.shouldThrowError( function( )
+    {
+       bitmask.defaultFieldsArray = 'string';
+    } );
+  }
+}
+
 var Self =
 {
 
   name : 'Bitmask test',
   // verbose : 1,
+  silencing : 1,
 
   tests :
   {
     mapToWord : mapToWord,
     wordToMap : wordToMap,
+    _defaultFieldsArraySet : _defaultFieldsArraySet
+
   },
 
 }

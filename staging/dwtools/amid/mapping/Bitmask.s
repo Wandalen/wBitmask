@@ -65,7 +65,7 @@ function init( o )
 /**
  * Converts boolean map( map ) into  32-bit number bitmask.
  * Each true/false key value in map corresponds to 1/0 bit value in number.
- * Before converions function supplements source( map ) by unique fields from( defaultFieldsMap ).
+ * Before convertion function supplements source( map ) by unique fields from( defaultFieldsMap ).
  *
  * @param { object } map - source map.
  * @return { number } Returns boolean map values represented as number.
@@ -204,7 +204,7 @@ function toStr( o )
 //
 
 /**
- *
+ * Setter for ( defaultFieldsArray ) field.
  * @param { array } src - source array.
  *
  * @example
@@ -222,6 +222,8 @@ function toStr( o )
  *
  * @private
  * @method _defaultFieldsArraySet
+ * @throws {exception} If( src ) is not a Array or null.
+ * @throws {exception} If( src.length ) is bigger then 32.
  * @memberof wTools
  */
 
@@ -303,8 +305,8 @@ var Proto =
 
 // define
 
-/*Makes prototype for constructor Self. Extends prototype with field from Proto
-and adjust relationships : Composes, Aggregates, Associates, Restricts.*/
+/*Makes prototype for constructor Self. Extends prototype with fields from Proto
+and repairs relationships : Composes, Aggregates, Associates, Restricts.*/
 
 _.classMake
 ({
