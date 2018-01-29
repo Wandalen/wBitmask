@@ -7,17 +7,24 @@
 if( typeof module !== 'undefined' )
 {
 
-  if( typeof wBase === 'undefined' )
-  try
+  if( typeof _global_ === 'undefined' || !_global_.wBase )
   {
-    require( '../../Base.s' );
-  }
-  catch( err )
-  {
-    require( 'wTools' );
+    let toolsPath = '../../../dwtools/Base.s';
+    let toolsExternal = 0;
+    try
+    {
+      require.resolve( toolsPath )/*hhh*/;
+    }
+    catch( err )
+    {
+      toolsExternal = 1;
+      require( 'wTools' );
+    }
+    if( !toolsExternal )
+    require( toolsPath )/*hhh*/;
   }
 
-  var _ = wTools;
+  var _ = _global_.wTools;
 
   _.include( 'wCopyable' );
 
@@ -25,7 +32,7 @@ if( typeof module !== 'undefined' )
 
 // constructor
 
-var _ = wTools;
+var _ = _global_.wTools;
 var Parent = null;
 var Self = function wBitmask( o )
 {
@@ -239,6 +246,9 @@ function _defaultFieldsArraySet( src )
   if( src )
   {
 
+    // debugger;
+    // src = _.cloneJust( src );
+
     if( src.length > 32 )
     throw _.err( 'Bitmask cant store more then 32 fields' );
 
@@ -265,6 +275,10 @@ function _defaultFieldsArraySet( src )
 // --
 
 var Composes =
+{
+}
+
+var Aggregates =
 {
   defaultFieldsArray : null,
 }
@@ -298,6 +312,7 @@ var Proto =
 
   constructor : Self,
   Composes : Composes,
+  Aggregates : Aggregates,
   Associates : Associates,
   Restricts : Restricts,
 
@@ -317,7 +332,7 @@ _.classMake
 
 /*Mixins wCopyable into prototype Self*/
 
-wCopyable.mixin( Self );
+_.Copyable.mixin( Self );
 
 // accessor
 
@@ -342,7 +357,12 @@ _.accessorReadOnly( Self.prototype,
 
 });
 
+//
+
 /*Defines class on wTools and global namespaces*/
-wTools[ Self.nameShort ] = _global_[ Self.name ] = Self;
+
+_[ Self.nameShort ] = _global_[ Self.name ] = Self;
+if( typeof module !== 'undefined' )
+module[ 'exports' ] = Self;
 
 })();
