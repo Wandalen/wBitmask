@@ -22,9 +22,9 @@ if( typeof module !== 'undefined' )
     require( toolsPath );
   }
 
-  require( '../amapping/Bitmask.s' );
-
   var _ = _global_.wTools;
+
+  require( '../amapping/Bitmask.s' );
 
   _.include( 'wTesting' );
 
