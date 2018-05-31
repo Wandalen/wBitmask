@@ -1,6 +1,6 @@
 ( function _Bitmask_test_s_( ) {
 
-'use strict';
+'use strict'; /*aaa*/
 
 if( typeof module !== 'undefined' )
 {
@@ -24,9 +24,9 @@ if( typeof module !== 'undefined' )
 
   var _ = _global_.wTools;
 
-  require( '../amapping/Bitmask.s' );
-
   _.include( 'wTesting' );
+
+  require( '../amapping/Bitmask.s' );
 
 }
 
@@ -230,16 +230,19 @@ var _defaultFieldsArraySet = function( test )
 var Self =
 {
 
-  name : 'Bitmask test',
-  // verbose : 1,
+  name : 'Bitmask',
   silencing : 1,
+  // verbose : 1,
+
+  context :
+  {
+  },
 
   tests :
   {
     mapToWord : mapToWord,
     wordToMap : wordToMap,
     _defaultFieldsArraySet : _defaultFieldsArraySet
-
   },
 
 }
