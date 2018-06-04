@@ -1,6 +1,6 @@
 {
   "name": "wBitmask",
-  "version": "0.4.20",
+  "version": "0.4.21",
   "engine": "node >= 6.0.0",
   "description": "The module in JavaScript provides an easy way to manage boolean maps",
   "author": "Kostiantyn Wandalen <wtory.net@domainsbyproxy.com>",
