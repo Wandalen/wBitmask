@@ -105,7 +105,7 @@ function mapToWord( map )
   var names = self.names;
   var defaultFieldsMap = self.defaultFieldsMap;
 
-  _.assert( arguments.length === 1 );
+  _.assert( arguments.length === 1, 'expects single argument' );
   _.assert( _.objectIs( map ) );
   _.mapSupplement( map,defaultFieldsMap )
   _.assertMapHasOnly( map,defaultFieldsMap );
@@ -154,7 +154,7 @@ function wordToMap( word )
   var result = {};
   var names = self.names;
 
-  _.assert( arguments.length === 1 );
+  _.assert( arguments.length === 1, 'expects single argument' );
   _.assert( _.numberIs( word ) );
 
   for( var f = 0 ; f < names.length ; f++ )

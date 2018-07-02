@@ -1,6 +1,6 @@
 ( function _Bitmask_test_s_( ) {
 
-'use strict'; 
+'use strict';
 
 if( typeof module !== 'undefined' )
 {
@@ -230,7 +230,7 @@ var _defaultFieldsArraySet = function( test )
 var Self =
 {
 
-  name : 'Bitmask',
+  name : 'Tools/amid/Bitmask',
   silencing : 1,
   // verbose : 1,
 
