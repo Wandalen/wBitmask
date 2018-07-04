@@ -230,7 +230,7 @@ var _defaultFieldsArraySet = function( test )
 var Self =
 {
 
-  name : 'Tools/amid/Bitmask',
+  name : 'Tools/mid/Bitmask',
   silencing : 1,
   // verbose : 1,
 
