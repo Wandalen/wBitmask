@@ -57,46 +57,46 @@ function mapToWord( test )
 
   //default 10100
 
-  test.description = 'simple1';
+  test.case = 'simple1';
   var got = bitmask.mapToWord( { hidden : 1, terminal : 0, directory : 1 } );
   var expected = parseInt( '11001', 2 );
   test.identical( got,expected );
 
-  test.description = 'simple2';
+  test.case = 'simple2';
   var got = bitmask.mapToWord( { link : 0, system : 1 } );
   var expected = parseInt( '00110', 2 );
   test.identical( got,expected );
 
-  test.description = 'value is -1';
+  test.case = 'value is -1';
   var got = bitmask.mapToWord( { hidden : -1, system : 1 } );
   var expected = parseInt( '10111', 2 );
   test.identical( got,expected );
 
-  test.description = 'map value is bigger then 1 or 0';
+  test.case = 'map value is bigger then 1 or 0';
   var got = bitmask.mapToWord( { hidden : -1, system : 100 } );
   var expected = parseInt( '10111', 2 );
   test.identical( got,expected );
 
-  test.description = 'map value is str';
+  test.case = 'map value is str';
   var got = bitmask.mapToWord( { hidden : 'a', system : 0 } );
   var expected = parseInt( '10101', 2 );
   test.identical( got,expected );
 
   if( Config.debug )
   {
-    test.description = 'no argument';
+    test.case = 'no argument';
     test.shouldThrowError( function( )
     {
        bitmask.mapToWord(  );
     } );
 
-    test.description = 'map is not a object';
+    test.case = 'map is not a object';
     test.shouldThrowError( function( )
     {
        bitmask.mapToWord( [ 1, 2, 3 ] );
     } );
 
-    test.description = 'map with unknown property';
+    test.case = 'map with unknown property';
     test.shouldThrowError( function( )
     {
        bitmask.mapToWord( { hidden : -1, system : 1, original : 1 } );
@@ -109,7 +109,7 @@ function mapToWord( test )
 function wordToMap( test )
 {
 
-  test.description = 'simple1';
+  test.case = 'simple1';
   var got = bitmask.wordToMap( parseInt( '11001', 2 ) );
   var expected =
   {
@@ -121,7 +121,7 @@ function wordToMap( test )
   }
   test.identical( got,expected );
 
-  test.description = 'simple2';
+  test.case = 'simple2';
   var got = bitmask.wordToMap( parseInt( '00110', 2 ) );
   var expected =
   {
@@ -133,7 +133,7 @@ function wordToMap( test )
   }
   test.identical( got,expected );
 
-  test.description = 'value is 0';
+  test.case = 'value is 0';
   var got = bitmask.wordToMap( 0 );
   var expected =
   {
@@ -144,7 +144,7 @@ function wordToMap( test )
      link : false,
   }
   test.identical( got,expected );
-  test.description = 'value is 1';
+  test.case = 'value is 1';
   var got = bitmask.wordToMap( 1 );
   var expected =
   {
@@ -158,13 +158,13 @@ function wordToMap( test )
 
   if( Config.debug )
   {
-    test.description = 'no argument';
+    test.case = 'no argument';
     test.shouldThrowError( function( )
     {
        bitmask.wordToMap(  );
     } );
 
-    test.description = 'word is not a number';
+    test.case = 'word is not a number';
     test.shouldThrowError( function( )
     {
        bitmask.wordToMap( "123" );
@@ -181,7 +181,7 @@ var _defaultFieldsArraySet = function( test )
     defaultFieldsArray : defaultFieldsArray
   } );
 
-  test.description = 'defaultFieldsArray check';
+  test.case = 'defaultFieldsArray check';
   var got = bitmask.defaultFieldsArray;
   var expected =
   [
@@ -193,7 +193,7 @@ var _defaultFieldsArraySet = function( test )
   ];
   test.identical( got,expected );
 
-  test.description = 'names check';
+  test.case = 'names check';
   var got = bitmask.names;
   var expected =
   [
@@ -205,7 +205,7 @@ var _defaultFieldsArraySet = function( test )
   ]
   test.identical( got,expected );
 
-  test.description = 'defaultFieldsMap check';
+  test.case = 'defaultFieldsMap check';
   var got = bitmask.defaultFieldsMap;
   var expected =
   {
@@ -219,7 +219,7 @@ var _defaultFieldsArraySet = function( test )
 
   if( Config.debug )
   {
-    test.description = 'set defaultFieldsArray with string ';
+    test.case = 'set defaultFieldsArray with string ';
     test.shouldThrowError( function( )
     {
        bitmask.defaultFieldsArray = 'string';
