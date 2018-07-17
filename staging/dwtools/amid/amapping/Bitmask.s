@@ -1,6 +1,6 @@
 ( function _Bitmask_s_( ) {
 
-'use strict';
+'use strict'; /**/
 
 // dependencies
 
