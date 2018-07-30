@@ -44,7 +44,7 @@ var Self = function wBitmask( o )
   return Self.prototype.init.apply( this,arguments );
 }
 
-Self.nameShort = 'Bitmask';
+Self.shortName = 'Bitmask';
 
 // --
 // inter
@@ -56,7 +56,7 @@ function init( o )
 
   _.assert( arguments.length === 0 || arguments.length === 1 );
 
-  _.instanceInit( self );/* extends object by fields from relationships */
+  _.instanceInit( self );/* extends object by fields from relations */
 
   Object.preventExtensions( self );/* disables object extending */
 
@@ -271,7 +271,7 @@ function _defaultFieldsArraySet( src )
 }
 
 // --
-// relationships
+// relations
 // --
 
 var Composes =
@@ -308,7 +308,7 @@ var Proto =
   _defaultFieldsArraySet : _defaultFieldsArraySet,
 
 
-  // relationships
+  // relations
 
   constructor : Self,
   Composes : Composes,
@@ -321,7 +321,7 @@ var Proto =
 // define
 
 /*Makes prototype for constructor Self. Extends prototype with fields from Proto
-and repairs relationships : Composes, Aggregates, Associates, Restricts.*/
+and repairs relations : Composes, Aggregates, Associates, Restricts.*/
 
 _.classMake
 ({
@@ -361,7 +361,7 @@ _.accessorReadOnly( Self.prototype,
 
 /*Defines class on wTools and global namespaces*/
 
-_[ Self.nameShort ] = _global_[ Self.name ] = Self;
+_[ Self.shortName ] = _global_[ Self.name ] = Self;
 if( typeof module !== 'undefined' )
 module[ 'exports' ] = Self;
 
