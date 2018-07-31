@@ -63,7 +63,7 @@ function init( o )
   if( o ) /* copy fields from options object */
   self.copy( o );
 
-  _.assert( self.defaultFieldsArray, 'Bitmask','needs defaultFieldsArray' ); /* checks if defaultFieldsArray is provided by( o ) */
+  _.assert( _.arrayIs( self.defaultFieldsArray ), 'Bitmask','needs defaultFieldsArray' ); /* checks if defaultFieldsArray is provided by( o ) */
 
 }
 
@@ -310,7 +310,7 @@ var Proto =
 
   // relations
 
-  constructor : Self,
+  /* constructor * : * Self, */
   Composes : Composes,
   Aggregates : Aggregates,
   Associates : Associates,
