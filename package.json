@@ -2,12 +2,12 @@
   "name": "wBitmask",
   "version": "0.4.36",
   "engine": "node >= 6.0.0",
-  "description": "The module in JavaScript provides an easy way to manage boolean maps",
+  "description": "A small class to convert a map of Booleans to Integer and vice versa with help of defined schema. The constructor of Bitmask expects names which created instance use for conversion. Use the module to solve the bitmask conversion problem robustly.",
   "author": "Kostiantyn Wandalen <wanalen@willbe.so>",
   "contributors": [
     {
       "name": "Kostiantyn Wandalen",
-      "email": "wanalen@willbe.so>"
+      "email": "wanalen@willbe.so"
     },
     {
       "name": "Volodymyr M.",

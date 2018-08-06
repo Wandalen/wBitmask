@@ -1,5 +1,5 @@
 # wBitmask [![Build Status](https://travis-ci.org/Wandalen/wBitmask.svg?branch=master)](https://travis-ci.org/Wandalen/wBitmask)
-The module in JavaScript provides an easy way to manage boolean maps.
+A small class to convert a map of Booleans to Integer and vice versa with help of defined schema. The constructor of Bitmask expects names which created instance use for conversion. Use the module to solve the bitmask conversion problem robustly.
 
 ## Bitmask
 Bitmask is a sequence of bits that we can use to store different data in a single value.
@@ -13,6 +13,13 @@ By using bitwise operations we can easily get needed bit(s) and set to or compar
 ```terminal
 npm install wBitmask
 ```
+
+### Try out
+```
+npm install
+node sample/Sample.s
+```
+
 ## Usage
 ```javascript
 
@@ -80,35 +87,3 @@ console.log( 'restoredMap :\n' + _.toStr( restoredMap ) );
   link : true
 }*/
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
