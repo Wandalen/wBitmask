@@ -331,7 +331,7 @@ var Proto =
 /*Makes prototype for constructor Self. Extends prototype with fields from Proto
 and repairs relations : Composes, Aggregates, Associates, Restricts.*/
 
-_.classMake
+_.classDeclare
 ({
   cls : Self,
   parent : Parent,
