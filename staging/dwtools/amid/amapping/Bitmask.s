@@ -341,7 +341,7 @@ _.Copyable.mixin( Self );
 
 /*Defines set/get functions for provided object fields names*/
 
-_.accessor( Self.prototype,
+_.accessor.declare( Self.prototype,
 {
 
   defaultFieldsArray : 'defaultFieldsArray',
@@ -352,7 +352,7 @@ _.accessor( Self.prototype,
 
 /*Makes fields readonly by defining only getter function*/
 
-_.accessorReadOnly( Self.prototype,
+_.accessor.readOnly( Self.prototype,
 {
 
   names : 'names',
