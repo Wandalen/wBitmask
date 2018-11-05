@@ -15,14 +15,14 @@
     }
   ],
   "license": "MIT",
-  "main": "staging/dwtools/amid/amapping/Bitmask.s",
+  "main": "proto/dwtools/amid/amapping/Bitmask.s",
   "files": [
-    "staging/dwtools/amid/amapping/Bitmask.s",
+    "proto/dwtools/amid/amapping/Bitmask.s",
     "production"
   ],
   "scripts": {
     "test": "wtest staging",
-    "make_doc": "./doc.sh"
+    "docgen": "wdocgen proto"
   },
   "repository": {
     "type": "git",
