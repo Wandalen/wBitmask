@@ -55,10 +55,10 @@ path:
       - ./dwtools/Tools.s
       - ./dwtools/abase
       - ./dwtools/amid
-      - ./dwtools/amid/amapping
-      - ./dwtools/amid/amapping/Bitmask.s
-      - ./dwtools/amid/amapping.test
-      - ./dwtools/amid/amapping.test/Bitmask.test.s
+      - ./dwtools/amid/l5_mapper
+      - ./dwtools/amid/l5_mapper/Bitmask.s
+      - ./dwtools/amid/l5_mapper.test
+      - ./dwtools/amid/l5_mapper.test/Bitmask.test.s
       - ./dwtools/atop
     criterion:
       default: 1
@@ -70,8 +70,8 @@ path:
   exportedTerminals.0:
     path:
       - ./dwtools/Tools.s
-      - ./dwtools/amid/amapping/Bitmask.s
-      - ./dwtools/amid/amapping.test/Bitmask.test.s
+      - ./dwtools/amid/l5_mapper/Bitmask.s
+      - ./dwtools/amid/l5_mapper.test/Bitmask.test.s
     criterion:
       default: 1
       debug: 1
@@ -161,8 +161,8 @@ reflector:
     recursive: 0
     filePath:
       ./dwtools/Tools.s: true
-      ./dwtools/amid/amapping/Bitmask.s: true
-      ./dwtools/amid/amapping.test/Bitmask.test.s: true
+      ./dwtools/amid/l5_mapper/Bitmask.s: true
+      ./dwtools/amid/l5_mapper.test/Bitmask.test.s: true
     srcFilter:
       basePath: .
       prefixPath: proto
@@ -285,8 +285,8 @@ exported:
     exportedTerminalsPath:
       path:
         - ./dwtools/Tools.s
-        - ./dwtools/amid/amapping/Bitmask.s
-        - ./dwtools/amid/amapping.test/Bitmask.test.s
+        - ./dwtools/amid/l5_mapper/Bitmask.s
+        - ./dwtools/amid/l5_mapper.test/Bitmask.test.s
       criterion:
         default: 1
         debug: 1
