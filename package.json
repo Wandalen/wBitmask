@@ -15,9 +15,9 @@
     }
   ],
   "license": "MIT",
-  "main": "proto/dwtools/amid/amapping/Bitmask.s",
+  "main": "proto/dwtools/amid/l5_mapper/Bitmask.s",
   "files": [
-    "proto/dwtools/amid/amapping/Bitmask.s",
+    "proto/dwtools/amid/l5_mapper/Bitmask.s",
     "proto/dwtools/Tools.s",
     "production"
   ],
