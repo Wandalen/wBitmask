@@ -9,7 +9,7 @@ if( typeof module !== 'undefined' )
 
   _.include( 'wTesting' );
 
-  require( '../amapping/Bitmask.s' );
+  require( '../l5_mapper/Bitmask.s' );
 
 }
 
