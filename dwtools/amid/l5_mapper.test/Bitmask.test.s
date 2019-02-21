@@ -43,27 +43,27 @@ function mapToWord( test )
   test.case = 'simple1';
   var got = bitmask.mapToWord( { hidden : 1, terminal : 0, directory : 1 } );
   var expected = parseInt( '11001', 2 );
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   test.case = 'simple2';
   var got = bitmask.mapToWord( { link : 0, system : 1 } );
   var expected = parseInt( '00110', 2 );
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   test.case = 'value is -1';
   var got = bitmask.mapToWord( { hidden : -1, system : 1 } );
   var expected = parseInt( '10111', 2 );
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   test.case = 'map value is bigger then 1 or 0';
   var got = bitmask.mapToWord( { hidden : -1, system : 100 } );
   var expected = parseInt( '10111', 2 );
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   test.case = 'map value is str';
   var got = bitmask.mapToWord( { hidden : 'a', system : 0 } );
   var expected = parseInt( '10101', 2 );
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   if( Config.debug )
   {
@@ -102,7 +102,7 @@ function wordToMap( test )
      directory : true,
      link : true,
   }
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   test.case = 'simple2';
   var got = bitmask.wordToMap( parseInt( '00110', 2 ) );
@@ -114,7 +114,7 @@ function wordToMap( test )
      directory : false,
      link : false,
   }
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   test.case = 'value is 0';
   var got = bitmask.wordToMap( 0 );
@@ -126,7 +126,7 @@ function wordToMap( test )
      directory : false,
      link : false,
   }
-  test.identical( got,expected );
+  test.identical( got, expected );
   test.case = 'value is 1';
   var got = bitmask.wordToMap( 1 );
   var expected =
@@ -137,7 +137,7 @@ function wordToMap( test )
      directory : false,
      link : false,
   }
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   if( Config.debug )
   {
@@ -174,7 +174,7 @@ var _defaultFieldsArraySet = function( test )
     { directory : false },
     { link : true },
   ];
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   test.case = 'names check';
   var got = bitmask.names;
@@ -186,7 +186,7 @@ var _defaultFieldsArraySet = function( test )
     'directory',
     'link'
   ]
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   test.case = 'defaultFieldsMap check';
   var got = bitmask.defaultFieldsMap;
@@ -198,7 +198,7 @@ var _defaultFieldsArraySet = function( test )
     directory: false,
     link: true
   }
-  test.identical( got,expected );
+  test.identical( got, expected );
 
   if( Config.debug )
   {
@@ -223,9 +223,9 @@ var Self =
 
   tests :
   {
-    mapToWord : mapToWord,
-    wordToMap : wordToMap,
-    _defaultFieldsArraySet : _defaultFieldsArraySet
+    mapToWord,
+    wordToMap,
+    _defaultFieldsArraySet
   },
 
 }

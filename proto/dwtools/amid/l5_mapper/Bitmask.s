@@ -50,7 +50,7 @@ function init( o )
   if( o ) /* copy fields from options object */
   self.copy( o );
 
-  _.assert( _.arrayIs( self.defaultFieldsArray ), 'Bitmask','needs defaultFieldsArray' ); /* checks if defaultFieldsArray is provided by( o ) */
+  _.assert( _.arrayIs( self.defaultFieldsArray ), 'Bitmask', 'needs defaultFieldsArray' ); /* checks if defaultFieldsArray is provided by( o ) */
 
 }
 
@@ -94,8 +94,8 @@ function mapToWord( map )
 
   _.assert( arguments.length === 1, 'Expects single argument' );
   _.assert( _.objectIs( map ) );
-  _.mapSupplement( map,defaultFieldsMap )
-  _.assertMapHasOnly( map,defaultFieldsMap );
+  _.mapSupplement( map, defaultFieldsMap )
+  _.assertMapHasOnly( map, defaultFieldsMap );
 
   for( var f = 0 ; f < names.length ; f++ )
   {
@@ -285,23 +285,23 @@ var Restricts =
 var Proto =
 {
 
-  init : init,
+  init,
 
-  mapToWord : mapToWord,
-  wordToMap : wordToMap,
+  mapToWord,
+  wordToMap,
 
-  toStr : toStr,
+  toStr,
 
-  _defaultFieldsArraySet : _defaultFieldsArraySet,
+  _defaultFieldsArraySet,
 
 
   // relations
 
 
-  Composes : Composes,
-  Aggregates : Aggregates,
-  Associates : Associates,
-  Restricts : Restricts,
+  Composes,
+  Aggregates,
+  Associates,
+  Restricts,
 
 };
 
