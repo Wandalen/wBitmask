@@ -24,6 +24,12 @@ if( typeof module !== 'undefined' )
 
 // constructor
 
+/**
+ * @classdesc Class to convert a map of Booleans to Integer and vice versa with help of defined schema.
+ * @class wBitmask
+ * @memberof module:Tools/mid/Bitmask
+*/
+
 var _ = _global_.wTools;
 var Parent = null;
 var Self = function wBitmask( o )
@@ -82,7 +88,7 @@ function init( o )
  * @throws {exception} If no argument provided.
  * @throws {exception} If( map ) is not a Object.
  * @throws {exception} If( map ) is extended by unknown property.
- * @memberof wTools
+ * @memberof module:Tools/mid/Bitmask.wBitmask#
  */
 
 function mapToWord( map )
@@ -132,7 +138,7 @@ function mapToWord( map )
  * @method wordToMap
  * @throws {exception} If no argument provided.
  * @throws {exception} If( word ) is not a Number.
- * @memberof wTools
+ * @memberof module:Tools/mid/Bitmask.wBitmask#
  */
 
 function wordToMap( word )
@@ -182,7 +188,7 @@ function wordToMap( word )
  * // }
  *
  * @method toStr
- * @memberof wTools
+ * @memberof module:Tools/mid/Bitmask.wBitmask#
  */
 
 function toStr( o )
@@ -218,7 +224,7 @@ function toStr( o )
  * @method _defaultFieldsArraySet
  * @throws {exception} If( src ) is not a Array or null.
  * @throws {exception} If( src.length ) is bigger then 32.
- * @memberof wTools
+ * @memberof module:Tools/mid/Bitmask.wBitmask#
  */
 
 function _defaultFieldsArraySet( src )
