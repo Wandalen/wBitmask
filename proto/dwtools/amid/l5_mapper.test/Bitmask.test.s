@@ -29,9 +29,9 @@ var defaultFieldsArray =
 ];
 
 var bitmask = wBitmask
-( {
+({
   defaultFieldsArray : defaultFieldsArray
-} );
+});
 
 //
 
