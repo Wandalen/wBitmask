@@ -1,18 +1,28 @@
-
 {
-  "name": "wbitmask",
-  "version": "0.3.0",
-  "description": "___",
+  "name": "wBitmask",
+  "version": "0.4.92",
+  "engine": "node >= 6.0.0",
+  "description": "A small class to convert a map of Booleans to Integer and vice versa with help of defined schema. The constructor of Bitmask expects names which created instance use for conversion. Use the module to solve the bitmask conversion problem robustly.",
   "author": "Kostiantyn Wandalen <wanalen@willbe.so>",
+  "contributors": [
+    {
+      "name": "Kostiantyn Wandalen",
+      "email": "wanalen@willbe.so"
+    },
+    {
+      "name": "Volodymyr M.",
+      "email": "volodymyr.migdal@gmail.com"
+    }
+  ],
   "license": "MIT",
-  "main": "proto/dwtools/amid/___",
+  "main": "proto/dwtools/amid/l5_mapper/Bitmask.s",
   "files": [
-    "proto/dwtools/amid",
+    "proto/dwtools/amid/l5_mapper/Bitmask.s",
     "proto/dwtools/Tools.s",
     "production"
   ],
   "scripts": {
-    "test": "wtest proto",
+    "test": "wtest .run proto/**",
     "docgen": "wdocgen proto"
   },
   "repository": {
@@ -23,12 +33,16 @@
     "url": "https://github.com/Wandalen/wBitmask/issues"
   },
   "dependencies": {
-    "wTools": ""
+    "wTools": "",
+    "wCopyable": ""
   },
   "devDependencies": {
     "wTesting": ""
   },
   "keywords": [
-    "wTools"
+    "wTools",
+    "bitmask",
+    "bitwise",
+    "logical"
   ]
 }

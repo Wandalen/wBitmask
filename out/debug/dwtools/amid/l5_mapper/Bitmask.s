@@ -34,7 +34,7 @@ var _ = _global_.wTools;
 var Parent = null;
 var Self = function wBitmask( o )
 {
-  return _.instanceConstructor( Self, this, arguments );
+  return _.workpiece.construct( Self, this, arguments );
 }
 
 Self.shortName = 'Bitmask';
@@ -49,7 +49,7 @@ function init( o )
 
   _.assert( arguments.length === 0 || arguments.length === 1 );
 
-  _.instanceInit( self );/* extends object by fields from relations */
+  _.workpiece.initFields( self );/* extends object by fields from relations */
 
   Object.preventExtensions( self );/* disables object extending */
 
@@ -300,9 +300,7 @@ var Proto =
 
   _defaultFieldsArraySet,
 
-
   // relations
-
 
   Composes,
   Aggregates,
@@ -354,7 +352,8 @@ _.accessor.readOnly( Self.prototype,
 
 /*Defines class on wTools and global namespaces*/
 
-_[ Self.shortName ] = _global_[ Self.name ] = Self;
+// _[ Self.shortName ] = _global_[ Self.name ] = Self;
+_[ Self.shortName ] = Self;
 if( typeof module !== 'undefined' )
 module[ 'exports' ] = Self;
 
