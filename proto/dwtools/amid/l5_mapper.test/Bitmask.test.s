@@ -68,19 +68,19 @@ function mapToWord( test )
   if( Config.debug )
   {
     test.case = 'no argument';
-    test.shouldThrowError( function( )
+    test.shouldThrowErrorOfAnyKind( function( )
     {
        bitmask.mapToWord(  );
     } );
 
     test.case = 'map is not a object';
-    test.shouldThrowError( function( )
+    test.shouldThrowErrorOfAnyKind( function( )
     {
        bitmask.mapToWord( [ 1, 2, 3 ] );
     } );
 
     test.case = 'map with unknown property';
-    test.shouldThrowError( function( )
+    test.shouldThrowErrorOfAnyKind( function( )
     {
        bitmask.mapToWord( { hidden : -1, system : 1, original : 1 } );
     } );
@@ -142,13 +142,13 @@ function wordToMap( test )
   if( Config.debug )
   {
     test.case = 'no argument';
-    test.shouldThrowError( function( )
+    test.shouldThrowErrorOfAnyKind( function( )
     {
        bitmask.wordToMap(  );
     } );
 
     test.case = 'word is not a number';
-    test.shouldThrowError( function( )
+    test.shouldThrowErrorOfAnyKind( function( )
     {
        bitmask.wordToMap( "123" );
     } );
@@ -203,7 +203,7 @@ var _defaultFieldsArraySet = function( test )
   if( Config.debug )
   {
     test.case = 'set defaultFieldsArray with string ';
-    test.shouldThrowError( function( )
+    test.shouldThrowErrorOfAnyKind( function( )
     {
        bitmask.defaultFieldsArray = 'string';
     } );
@@ -213,7 +213,7 @@ var _defaultFieldsArraySet = function( test )
 var Self =
 {
 
-  name : 'Tools/mid/Bitmask',
+  name : 'Tools.mid.Bitmask',
   silencing : 1,
   // verbose : 1,
 
