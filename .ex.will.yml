@@ -27,7 +27,7 @@ about :
 path :
 
   repository : git+https:///github.com/Wandalen/wBitmask.git
-  remotes :
+  origins :
    - git+https:///github.com/Wandalen/wBitmask.git
    - npm:///wBitmask
   bugtracker : https:///github.com/Wandalen/wBitmask/issues
