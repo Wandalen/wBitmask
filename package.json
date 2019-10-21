@@ -18,7 +18,7 @@
   {
     "url" : "https://github.com/Wandalen/wBitmask/issues"
   }, 
-  "dependencies" : { "wTools" : "", "wCopyable" : "" }, 
-  "devDependencies" : { "wTesting" : "" }, 
+  "dependencies" : { "wTools" : "beta", "wCopyable" : "beta" }, 
+  "devDependencies" : { "wTesting" : "beta" }, 
   "keywords" : [ "wTools", "bitmask", "bitwise", "logical" ]
 }
