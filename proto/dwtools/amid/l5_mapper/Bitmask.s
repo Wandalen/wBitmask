@@ -53,7 +53,7 @@ function init( o )
 
   Object.preventExtensions( self );/* disables object extending */
 
-  if( o ) /* copy fields from options object */
+  if( o ) /* copy fields from options map */
   self.copy( o );
 
   _.assert( _.arrayIs( self.defaultFieldsArray ), 'Bitmask', 'needs defaultFieldsArray' ); /* checks if defaultFieldsArray is provided by( o ) */
