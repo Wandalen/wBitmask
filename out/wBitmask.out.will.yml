@@ -2,10 +2,13 @@ format: outwillfile-2.0
 root:
   - wBitmask.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wBitmask.out.will.yml: &ref_0
+    hash: 4a8f161413c1bfb17137118d05ede700
+    size: 38691
+  ../.ex.will.yml: &ref_1
     hash: 83570e4611e01ab96fb9f8768416bfe2
     size: 1975
-  ../.im.will.yml: &ref_1
+  ../.im.will.yml: &ref_2
     hash: da59dfc5596bd39c4903ae72ca924f8f
     size: 5015
 module:
@@ -20,22 +23,22 @@ module:
         bitmask conversion problem robustly.
       enabled: 1
       version: 0.5.0
-      interpreters: &ref_2
+      interpreters:
         - njs >= 8.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
+      keywords:
         - wTools
         - bitmask
         - bitwise
         - logical
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@willbe.so>
         - Volodymyr M. <volodymyr.migdal@gmail.com>
       npm.name: wBitmask
-      npm.scripts: &ref_5
+      npm.scripts:
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -704,6 +707,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          reflector: 'reflector::exported.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          reflector: 'reflector::exported.files.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -792,8 +813,9 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wBitmask.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wBitmask
@@ -805,13 +827,24 @@ module:
         bitmask conversion problem robustly.
       enabled: 1
       version: 0.5.0
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 8.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - wTools
+        - bitmask
+        - bitwise
+        - logical
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@willbe.so>
+        - Volodymyr M. <volodymyr.migdal@gmail.com>
       npm.name: wBitmask
-      npm.scripts: *ref_5
+      npm.scripts:
+        test: wtest .run proto/**
+        docgen: wdocgen .build proto
     path:
       module.willfiles:
         criterion:
@@ -1487,3 +1520,6 @@ module:
       ../.im.will.yml:
         hash: da59dfc5596bd39c4903ae72ca924f8f
         size: 5015
+      wBitmask.out.will.yml:
+        hash: 4a8f161413c1bfb17137118d05ede700
+        size: 38691
