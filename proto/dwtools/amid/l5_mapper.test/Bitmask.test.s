@@ -1,6 +1,6 @@
 ( function _Bitmask_test_s_( ) {
 
-'use strict'; /*aaa*/
+'use strict';
 
 if( typeof module !== 'undefined' )
 {
@@ -28,7 +28,7 @@ var defaultFieldsArray =
 
 ];
 
-var bitmask = wBitmask
+var bitmask = _.Bitmask
 ({
   defaultFieldsArray : defaultFieldsArray
 });
@@ -159,7 +159,7 @@ function wordToMap( test )
 
 var _defaultFieldsArraySet = function( test )
 {
-  bitmask = wBitmask
+  bitmask = _.Bitmask
   ( {
     defaultFieldsArray : defaultFieldsArray
   } );
