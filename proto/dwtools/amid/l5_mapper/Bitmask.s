@@ -27,7 +27,8 @@ if( typeof module !== 'undefined' )
 /**
  * @classdesc Class to convert a map of Booleans to Integer and vice versa with help of defined schema.
  * @class wBitmask
- * @memberof module:Tools/mid/Bitmask
+ * @namespace wTools
+ * @module Tools/mid/Bitmask
 */
 
 var _ = _global_.wTools;
@@ -88,7 +89,9 @@ function init( o )
  * @throws {exception} If no argument provided.
  * @throws {exception} If( map ) is not a Object.
  * @throws {exception} If( map ) is extended by unknown property.
- * @memberof module:Tools/mid/Bitmask.wBitmask#
+ * @class wBitmask
+ * @namespace wTools
+ * @module Tools/mid/Bitmask
  */
 
 function mapToWord( map )
@@ -138,7 +141,9 @@ function mapToWord( map )
  * @method wordToMap
  * @throws {exception} If no argument provided.
  * @throws {exception} If( word ) is not a Number.
- * @memberof module:Tools/mid/Bitmask.wBitmask#
+ * @class wBitmask
+ * @namespace wTools
+ * @module Tools/mid/Bitmask
  */
 
 function wordToMap( word )
@@ -188,7 +193,9 @@ function wordToMap( word )
  * // }
  *
  * @method toStr
- * @memberof module:Tools/mid/Bitmask.wBitmask#
+ * @class wBitmask
+ * @namespace wTools
+ * @module Tools/mid/Bitmask
  */
 
 function toStr( o )
@@ -224,7 +231,9 @@ function toStr( o )
  * @method _defaultFieldsArraySet
  * @throws {exception} If( src ) is not a Array or null.
  * @throws {exception} If( src.length ) is bigger then 32.
- * @memberof module:Tools/mid/Bitmask.wBitmask#
+ * @class wBitmask
+ * @namespace wTools
+ * @module Tools/mid/Bitmask
  */
 
 function _defaultFieldsArraySet( src )
