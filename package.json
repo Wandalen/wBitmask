@@ -1,24 +1,24 @@
 {
-  "name" : "wBitmask", 
-  "version" : "0.4.196", 
-  "engine" : "node >= 8.0.0", 
-  "description" : "A small class to convert a map of Booleans to Integer and vice versa with help of defined schema. The constructor of Bitmask expects names which created instance use for conversion. Use the module to solve the bitmask conversion problem robustly.", 
-  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>", 
-  "contributors" : 
+  "name" : "wBitmask",
+  "version" : "0.4.197",
+  "engine" : "node >= 8.0.0",
+  "description" : "A small class to convert a map of Booleans to Integer and vice versa with help of defined schema. The constructor of Bitmask expects names which created instance use for conversion. Use the module to solve the bitmask conversion problem robustly.",
+  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>",
+  "contributors" :
   [
-    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@willbe.so" }, 
+    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@willbe.so" },
     { "name" : "Volodymyr M.", "email" : "volodymyr.migdal@gmail.com" }
-  ], 
-  "license" : "MIT", 
-  "main" : "proto/dwtools/amid/l5_mapper/Bitmask.s", 
-  "files" : [ "proto/dwtools/amid/l5_mapper/Bitmask.s", "proto/dwtools/Tools.s", "out" ], 
-  "scripts" : { "test" : "wtest .run proto/**", "docgen" : "wdocgen proto" }, 
-  "repository" : { "type" : "git", "url" : "https://github.com/Wandalen/wBitmask.git" }, 
-  "bugs" : 
+  ],
+  "license" : "MIT",
+  "main" : "proto/dwtools/amid/l5_mapper/Bitmask.s",
+  "files" : [ "proto/dwtools/amid/l5_mapper/Bitmask.s", "proto/dwtools/Tools.s", "out" ],
+  "scripts" : { "test" : "wtest .run proto/**", "docgen" : "wdocgen proto" },
+  "repository" : { "type" : "git", "url" : "https://github.com/Wandalen/wBitmask.git" },
+  "bugs" :
   {
     "url" : "https://github.com/Wandalen/wBitmask/issues"
-  }, 
-  "dependencies" : { "wTools" : "alpha", "wCopyable" : "alpha" }, 
-  "devDependencies" : { "wTesting" : "alpha" }, 
+  },
+  "dependencies" : { "wTools" : "gamma", "wCopyable" : "gamma" },
+  "devDependencies" : { "wTesting" : "gamma" },
   "keywords" : [ "wTools", "bitmask", "bitwise", "logical" ]
 }
