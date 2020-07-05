@@ -1,4 +1,4 @@
-# wBitmask [![Build Status](https://travis-ci.org/Wandalen/wBitmask.svg?branch=master)](https://travis-ci.org/Wandalen/wBitmask)
+# module::Bitmask [![Status](https://github.com/Wandalen/wBitmask/workflows/Test/badge.svg)](https://github.com/Wandalen/wBitmask}/actions?query=workflow%3ATest)
 A small class to convert a map of Booleans to Integer and vice versa with help of defined schema. The constructor of Bitmask expects names which created instance use for conversion. Use the module to solve the bitmask conversion problem robustly.
 
 ## Bitmask
