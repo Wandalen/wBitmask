@@ -162,6 +162,7 @@ module:
           export: 1
         path:
           - ../proto
+          - ../proto/Integration.test.s
           - ../proto/dwtools
           - ../proto/dwtools/Tools.s
           - ../proto/dwtools/abase
@@ -1503,6 +1504,4 @@ module:
       ../.im.will.yml:
         hash: da59dfc5596bd39c4903ae72ca924f8f
         size: 5015
-      wBitmask.out.will.yml:
-        hash: 7346d8d9effc9295ec8b75e878be8388
-        size: 38344
+      wBitmask.out.will.yml: *ref_0
