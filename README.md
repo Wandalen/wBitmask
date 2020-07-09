@@ -1,4 +1,4 @@
-# module::Bitmask [![Status](https://github.com/Wandalen/wBitmask/workflows/Test/badge.svg)](https://github.com/Wandalen/wBitmask/actions?query=workflow%3ATest) [![experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
+# module::Bitmask [![Status](https://github.com/Wandalen/wBitmask/workflows/Publish/badge.svg)](https://github.com/Wandalen/wBitmask/actions?query=workflow%3APublish) [![experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
 A small class to convert a map of Booleans to Integer and vice versa with help of defined schema. The constructor of Bitmask expects names which created instance use for conversion. Use the module to solve the bitmask conversion problem robustly.
 
 ## Bitmask
