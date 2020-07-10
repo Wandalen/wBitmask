@@ -1504,6 +1504,4 @@ module:
       ../.im.will.yml:
         hash: f3afd2b935593589c2c0ae03005d7d62
         size: 5012
-      wBitmask.out.will.yml:
-        hash: 1589270c6569de0b4428ac24777c169d
-        size: 38515
+      wBitmask.out.will.yml: *ref_0
