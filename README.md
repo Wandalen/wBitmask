@@ -23,7 +23,7 @@ node sample/Sample.s
 ## Usage
 ```javascript
 
-var _ = wTools;
+let _ = wTools;
 
 /*define array of possible names and bit values, that can vary*/
 var defaultFieldsArray =

@@ -13,7 +13,7 @@ if( typeof module !== 'undefined' )
 
 }
 
-var _ = _global_.wTools;
+let _ = _global_.wTools;
 
 //
 
@@ -210,7 +210,7 @@ var _defaultFieldsArraySet = function( test )
   }
 }
 
-var Self =
+let Self =
 {
 
   name : 'Tools.mid.Bitmask',

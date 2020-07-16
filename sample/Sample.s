@@ -4,7 +4,7 @@ if( typeof module !== 'undefined' )
 // require( '..' );
 require( 'wBitmask' );
 
-var _ = wTools;
+let _ = wTools;
 
 var defaultFieldsArray =
 [
