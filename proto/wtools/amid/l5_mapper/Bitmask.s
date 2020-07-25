@@ -8,8 +8,7 @@
 */
 
 /**
- * @file mapping/Bitmask.s.
- */
+ *  */
 
 // dependencies
 
