@@ -1,8 +1,6 @@
-
-
 if( typeof module !== 'undefined' )
 // require( '..' );
-require( 'wBitmask' );
+var wBitmask = require( 'wBitmask' );
 
 let _ = wTools;
 
@@ -19,7 +17,7 @@ var defaultFieldsArray =
 
 var bitmask = wBitmask
 ({
-  defaultFieldsArray : defaultFieldsArray
+  defaultFieldsArray
 });
 
 console.log( 'bitmask' )

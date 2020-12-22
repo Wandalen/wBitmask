@@ -1,4 +1,5 @@
-( function _Bitmask_s_( ) {
+( function _Bitmask_s_( )
+{
 
 'use strict';
 
@@ -32,7 +33,8 @@ if( typeof module !== 'undefined' )
 
 let _ = _global_.wTools;
 let Parent = null;
-let Self = function wBitmask( o )
+let Self = wBitmask;
+function wBitmask( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }
@@ -157,7 +159,8 @@ function wordToMap( word )
   for( var f = 0 ; f < names.length ; f++ )
   {
     var name = names[ f ];
-    result[ name ] = word & ( 1 << f ) ? true : false;
+    // result[ name ] = word & ( 1 << f ) ? true : false;
+    result[ name ] = !!( word & ( 1 << f ) );
   }
 
   return result;
@@ -337,24 +340,24 @@ _.Copyable.mixin( Self );
 
 /*Defines set/get functions for provided object fields names*/
 
-_.accessor.declare( Self.prototype,
-{
-
-  defaultFieldsArray : 'defaultFieldsArray',
-
-});
+_.accessor.declare
+(
+  Self.prototype,
+  { defaultFieldsArray : 'defaultFieldsArray' }
+);
 
 // readonly
 
 /*Makes fields readonly by defining only getter function*/
 
-_.accessor.readOnly( Self.prototype,
-{
-
-  names : 'names',
-  defaultFieldsMap : 'defaultFieldsMap',
-
-});
+_.accessor.readOnly
+(
+  Self.prototype,
+  {
+    names : 'names',
+    defaultFieldsMap : 'defaultFieldsMap',
+  }
+);
 
 //
 
