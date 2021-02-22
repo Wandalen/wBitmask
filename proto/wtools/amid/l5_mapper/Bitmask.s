@@ -206,7 +206,7 @@ function toStr( o )
   var result = '';
   var o = o || {};
 
-  var result = _.entity.exportToString( self.defaultFieldsMap, o );
+  var result = _.entity.exportString( self.defaultFieldsMap, o );
   return result;
 }
 
