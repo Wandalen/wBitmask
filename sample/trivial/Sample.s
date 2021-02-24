@@ -30,7 +30,7 @@ var originalMap =
   directory : 1,
 }
 
-console.log( 'originalMap :\n' + _.toStr( originalMap ) );
+console.log( 'originalMap :\n' + _.entity.exportString( originalMap ) );
 
 var word = bitmask.mapToWord( originalMap );
 
@@ -38,4 +38,4 @@ console.log( 'word : ' + word );
 
 var restoredMap = bitmask.wordToMap( word );
 
-console.log( 'restoredMap :\n' + _.toStr( restoredMap ) );
+console.log( 'restoredMap :\n' + _.entity.exportString( restoredMap ) );

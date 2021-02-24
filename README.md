@@ -72,7 +72,7 @@ var originalMap =
   directory : 1,
 }
 
-console.log( 'originalMap :\n' + _.toStr( originalMap ) );
+console.log( 'originalMap :\n' + _.entity.exportString( originalMap ) );
 /*originalMap :
 { hidden : 1, terminal : 0, directory : 1 }*/
 
@@ -85,7 +85,7 @@ console.log( 'word : ' + word );
 /*Convert 32-bit number bitmask into boolean map */
 var restoredMap = bitmask.wordToMap( word );
 
-console.log( 'restoredMap :\n' + _.toStr( restoredMap ) );
+console.log( 'restoredMap :\n' + _.entity.exportString( restoredMap ) );
 /*restoredMap :
 {
   hidden : true,
