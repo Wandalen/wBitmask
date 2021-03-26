@@ -32,7 +32,7 @@ if( typeof module !== 'undefined' )
 */
 
 const _ = _global_.wTools;
-let Parent = null;
+const Parent = null;
 const Self = wBitmask;
 function wBitmask( o )
 {
@@ -299,7 +299,7 @@ var Restricts =
 // declare
 // --
 
-var Proto =
+const Proto =
 {
 
   init,
