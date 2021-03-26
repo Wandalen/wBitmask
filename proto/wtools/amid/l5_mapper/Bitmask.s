@@ -31,9 +31,9 @@ if( typeof module !== 'undefined' )
  * @module Tools/mid/Bitmask
 */
 
-let _ = _global_.wTools;
+const _ = _global_.wTools;
 let Parent = null;
-let Self = wBitmask;
+const Self = wBitmask;
 function wBitmask( o )
 {
   return _.workpiece.construct( Self, this, arguments );
@@ -105,7 +105,7 @@ function mapToWord( map )
   _.assert( arguments.length === 1, 'Expects single argument' );
   _.assert( _.objectIs( map ) );
   _.mapSupplement( map, defaultFieldsMap )
-  _.assertMapHasOnly( map, defaultFieldsMap );
+  _.map.assertHasOnly( map, defaultFieldsMap );
 
   for( var f = 0 ; f < names.length ; f++ )
   {
