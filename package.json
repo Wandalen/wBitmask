@@ -1,6 +1,6 @@
 {
   "name" : "wBitmask",
-  "version" : "0.4.287",
+  "version" : "0.4.288",
   "engine" : "node >= 10.0.0",
   "description" : "A small class to convert a map of Booleans to Integer and vice versa with help of defined schema. The constructor of Bitmask expects names which created instance use for conversion. Use the module to solve the bitmask conversion problem robustly.",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
@@ -10,7 +10,7 @@
     { "name" : "Volodymyr M.", "email" : "volodymyr.migdal@gmail.com" }
   ],
   "license" : "MIT",
-  "main" : "/pro/module/wBitmask/proto/node_modules/wBitmask",
+  "main" : "proto/node_modules/wBitmask",
   "files" : [ "proto/wtools/amid/l5_mapper/Bitmask.s", "proto/wtools/Tools.s", "out", "proto/node_modules" ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" : { "type" : "git", "url" : "https://github.com/Wandalen/wBitmask.git" },
