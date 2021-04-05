@@ -80,8 +80,8 @@ path:
       raw: compiled
       content: prime
   npm.proto.entry:
-    - /pro/module/wBitmask/proto/wtools/amid/l5_mapper/Bitmask.s
-    - /pro/module/wBitmask/proto/node_modules/wBitmask
+    - proto/wtools/amid/l5_mapper/Bitmask.s
+    - proto/node_modules/wBitmask
 reflector:
   reflect.proto:
     inherit: predefined.*
