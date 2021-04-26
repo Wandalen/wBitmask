@@ -104,7 +104,7 @@ function mapToWord( map )
 
   _.assert( arguments.length === 1, 'Expects single argument' );
   _.assert( _.objectIs( map ) );
-  _.mapSupplement( map, defaultFieldsMap )
+  _.props.supplement( map, defaultFieldsMap )
   _.map.assertHasOnly( map, defaultFieldsMap );
 
   for( var f = 0 ; f < names.length ; f++ )
