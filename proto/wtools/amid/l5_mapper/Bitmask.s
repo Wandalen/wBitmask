@@ -103,7 +103,7 @@ function mapToWord( map )
   var defaultFieldsMap = self.defaultFieldsMap;
 
   _.assert( arguments.length === 1, 'Expects single argument' );
-  _.assert( _.objectIs( map ) );
+  _.assert( _.object.isBasic( map ) );
   _.props.supplement( map, defaultFieldsMap )
   _.map.assertHasOnly( map, defaultFieldsMap );
 
@@ -260,7 +260,7 @@ function _defaultFieldsArraySet( src )
     {
       var field = src[ s ];
       var keys = Object.keys( field );
-      _.assert( _.objectIs( field ) );
+      _.assert( _.object.isBasic( field ) );
       _.assert( keys.length === 1 );
       names.push( keys[ 0 ] );
       defaultFieldsMap[ keys[ 0 ] ] = field[ keys[ 0 ] ];
