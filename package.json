@@ -1,6 +1,6 @@
 {
   "name" : "wBitmask",
-  "version" : "0.4.303",
+  "version" : "0.4.304",
   "engine" : "node >= 10.0.0",
   "description" : "A small class to convert a map of Booleans to Integer and vice versa with help of defined schema. The constructor of Bitmask expects names which created instance use for conversion. Use the module to solve the bitmask conversion problem robustly.",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
@@ -18,7 +18,7 @@
   {
     "url" : "https://github.com/Wandalen/wBitmask/issues"
   },
-  "dependencies" : { "wTools" : "delta", "wCopyable" : "delta" },
-  "devDependencies" : { "eslint" : "7.1.0", "wTesting" : "delta" },
+  "dependencies" : { "wTools" : "stable", "wCopyable" : "stable" },
+  "devDependencies" : { "eslint" : "7.1.0", "wTesting" : "stable" },
   "keywords" : [ "wTools", "bitmask", "bitwise", "logical" ]
 }
