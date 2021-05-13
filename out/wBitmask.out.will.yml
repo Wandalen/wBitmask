@@ -2,12 +2,9 @@ format: outwillfile-2.0
 root:
   - wBitmask.out
 consistency:
-  ../.ex.will.yml: &ref_0
-    hash: 2481fab0518c21215e4be01b806bc690
-    size: 1976
-  ../.im.will.yml: &ref_1
-    hash: 3bad81a9c4375c4e36257aa6a220ee68
-    size: 5040
+  ../will.yml: &ref_0
+    hash: 2292340ff38ce0cbc7c3c659763104bd
+    size: 6794
 module:
   wBitmask.out:
     about:
@@ -20,22 +17,22 @@ module:
         bitmask conversion problem robustly.
       enabled: 1
       version: 0.5.0
-      interpreters: &ref_2
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords: &ref_3
+      license: MIT
+      npm.name: wBitmask
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: &ref_1
         - wTools
         - bitmask
         - bitwise
         - logical
-      license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
+      contributors: &ref_2
         - Kostiantyn Wandalen <wanalen@01.school>
         - Volodymyr M. <volodymyr.migdal@gmail.com>
-      npm.name: wBitmask
-      npm.scripts: &ref_5
+      interpreters: &ref_3
+        - njs >= 10.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      npm.scripts: &ref_4
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -50,15 +47,11 @@ module:
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.in:
         criterion:
           predefined: 1
@@ -798,8 +791,7 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      ../will.yml: *ref_0
   ../:
     about:
       name: wBitmask
@@ -811,26 +803,22 @@ module:
         bitmask conversion problem robustly.
       enabled: 1
       version: 0.5.0
-      interpreters: *ref_2
-      keywords: *ref_3
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
       npm.name: wBitmask
-      npm.scripts: *ref_5
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: *ref_1
+      contributors: *ref_2
+      interpreters: *ref_3
+      npm.scripts: *ref_4
     path:
       module.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
@@ -1489,9 +1477,6 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.ex.will.yml:
-        hash: 2481fab0518c21215e4be01b806bc690
-        size: 1976
-      ../.im.will.yml:
-        hash: 3bad81a9c4375c4e36257aa6a220ee68
-        size: 5040
+      ../will.yml:
+        hash: 2292340ff38ce0cbc7c3c659763104bd
+        size: 6794
