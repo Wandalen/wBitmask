@@ -3,8 +3,8 @@ root:
   - wBitmask.out
 consistency:
   ../will.yml: &ref_0
-    hash: 577420a72f23e382db111cc78bc4adad
-    size: 6653
+    hash: 6f0c56155c7e4a38f12527728ed126c8
+    size: 6661
 module:
   wBitmask.out:
     about:
@@ -1460,5 +1460,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 577420a72f23e382db111cc78bc4adad
-        size: 6653
+        hash: 6f0c56155c7e4a38f12527728ed126c8
+        size: 6661
